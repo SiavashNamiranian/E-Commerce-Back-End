@@ -11,7 +11,6 @@ router.get('/', async (req, res) => {
       include: [{
         model: Product,
         through: ProductTag,
-        as: 'Product'
       }]
     });
   
@@ -29,7 +28,7 @@ router.get('/:id', async (req, res) => {
       include: [{ 
         model: Product, 
         through: ProductTag,
-        as: 'Product'}]
+      }]
     });
 
     if (!tagData) {
@@ -57,7 +56,7 @@ router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
   Tag.update(
     {
-    tagName: req.body.tag_name
+    tag_name: req.body.tag_name
     },
     {
       // Gets the tag based on the id given in the request parameters
