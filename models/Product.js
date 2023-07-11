@@ -28,6 +28,14 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: true
     },
+    tag_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'tag',
+        key: 'id',
+        unique: false
+      },
+    },
     category_id: {
       type: DataTypes.INTEGER,
       references:{
